@@ -1,0 +1,39 @@
+{
+    "data": [
+        {
+            "name": "Ship",
+            "filler": true
+        },
+        {
+            "name": "Ball",
+            "filler": true
+        },
+        {
+            "name": "UFO",
+            "filler": true
+        },
+        {
+            "name": "Wave",
+            "filler": true
+        },
+        {
+            "name": "Robot",
+            "filler": true
+        },
+        {
+            "name": "Spider",
+            "filler": true
+        },
+        {
+            "name": "Swing",
+            "filler": true
+        },
+        {
+            "name": "",
+            "category": [
+                ""
+            ],
+            "progression": true
+        },
+    ]
+}
