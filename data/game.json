@@ -2,8 +2,6 @@
   "game": "GeometryDash",
   "creator": "Ayden",
   "filler_item_name": "Cube",
-  "starting_items": [
-    }
-  ],
-  "death_link": true,
+  "starting_items": [],
+  "death_link": true
 }
