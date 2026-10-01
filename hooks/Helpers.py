@@ -7,31 +7,31 @@ from BaseClasses import MultiWorld
 def before_is_category_enabled(multiworld: MultiWorld, player: int, category_name: str) -> Optional[bool]:
 
     if category_name == "Update 1.0":
-        return get_option_value(multiworld, player, "min_update") >= 1 and get_option_value(multiworld, player, "max_update") <= 1
+        return get_option_value(multiworld, player, "min_update") <= 1 and get_option_value(multiworld, player, "max_update") >= 1
     if category_name == "Update 1.1":
-        return get_option_value(multiworld, player, "min_update") >= 2 and get_option_value(multiworld, player, "max_update") <= 2
+        return get_option_value(multiworld, player, "min_update") <= 2 and get_option_value(multiworld, player, "max_update") >= 2
     if category_name == "Update 1.2":
-        return get_option_value(multiworld, player, "min_update") >= 3 and get_option_value(multiworld, player, "max_update") <= 3
+        return get_option_value(multiworld, player, "min_update") <= 3 and get_option_value(multiworld, player, "max_update") >= 3
     if category_name == "Update 1.3":
-        return get_option_value(multiworld, player, "min_update") >= 4 and get_option_value(multiworld, player, "max_update") <= 4
+        return get_option_value(multiworld, player, "min_update") <= 4 and get_option_value(multiworld, player, "max_update") >= 4
     if category_name == "Update 1.4":
-        return get_option_value(multiworld, player, "min_update") >= 5 and get_option_value(multiworld, player, "max_update") <= 5
+        return get_option_value(multiworld, player, "min_update") <= 5 and get_option_value(multiworld, player, "max_update") >= 5
     if category_name == "Update 1.5":
-        return get_option_value(multiworld, player, "min_update") >= 6 and get_option_value(multiworld, player, "max_update") <= 6
+        return get_option_value(multiworld, player, "min_update") <= 6 and get_option_value(multiworld, player, "max_update") >= 6
     if category_name == "Update 1.6":
-        return get_option_value(multiworld, player, "min_update") >= 7 and get_option_value(multiworld, player, "max_update") <= 7
+        return get_option_value(multiworld, player, "min_update") <= 7 and get_option_value(multiworld, player, "max_update") >= 7
     if category_name == "Update 1.7":
-        return get_option_value(multiworld, player, "min_update") >= 8 and get_option_value(multiworld, player, "max_update") <= 8
+        return get_option_value(multiworld, player, "min_update") <= 8 and get_option_value(multiworld, player, "max_update") >= 8
     if category_name == "Update 1.8":
-        return get_option_value(multiworld, player, "min_update") >= 9 and get_option_value(multiworld, player, "max_update") <= 9
+        return get_option_value(multiworld, player, "min_update") <= 9 and get_option_value(multiworld, player, "max_update") >= 9
     if category_name == "Update 1.9":
-        return get_option_value(multiworld, player, "min_update") >= 10 and get_option_value(multiworld, player, "max_update") <= 10
+        return get_option_value(multiworld, player, "min_update") <= 10 and get_option_value(multiworld, player, "max_update") >= 10
     if category_name == "Update 2.0":
-        return get_option_value(multiworld, player, "min_update") >= 11 and get_option_value(multiworld, player, "max_update") <= 11
+        return get_option_value(multiworld, player, "min_update") <= 11 and get_option_value(multiworld, player, "max_update") >= 11
     if category_name == "Update 2.1":
-        return get_option_value(multiworld, player, "min_update") >= 12 and get_option_value(multiworld, player, "max_update") <= 12
+        return get_option_value(multiworld, player, "min_update") <= 12 and get_option_value(multiworld, player, "max_update") >= 12
     if category_name == "Update 2.2":
-        return get_option_value(multiworld, player, "min_update") >= 13 and get_option_value(multiworld, player, "max_update") <= 13
+        return get_option_value(multiworld, player, "min_update") <= 13 and get_option_value(multiworld, player, "max_update") >= 13
 
     if category_name == "Tiny":
         return get_option_value(multiworld, player, "min_length") >= 1 and get_option_value(multiworld, player, "max_length") <= 1
