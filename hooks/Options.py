@@ -26,24 +26,6 @@ from typing import Type, Any
 #   options["total_characters_to_win_with"] = TotalCharactersToWinWith
 #
 
-class RemoveCreators(OptionList):
-    """This is a list of all creators you want to exclude."""
-    display_name = "Creators Blacklist"
-
-class RemoveSongs(OptionList):
-    """This is a list of all songs you want to exclude."""
-    display_name = "Songs Blacklist"
-
-class RemoveSongArtists(OptionList):
-    """This is a list of all song artists you want to exclude."""
-    display_name = "Song Arists Blacklist"
-
-manual_options = {
-    "RemoveCreators": RemoveCreators,
-    "RemoveSongs": RemoveSongs,
-    "RemoveSongArtists": RemoveSongArtists,
-}
-
 # This is called before any manual options are defined, in case you want to define your own with a clean slate or let Manual define over them
 def before_options_defined(options: dict[str, Type[Option[Any]]]) -> dict[str, Type[Option[Any]]]:
     return options

@@ -18,7 +18,7 @@
       "display_name": "Platformer Mode",
       "description": "Do you want to enable platformer levels?",
       "type": "toggle",
-      "default": true
+      "default": false
     },
     "min_update": {
       "display_name": "Minimum Update",
@@ -35,13 +35,13 @@
         "9: 1.8",
         "10: 1.9",
         "11: 2.0",
-        "12: 2.2",
+        "12: 2.1",
         "13: 2.2"
       ],
       "type": "Range",
       "range_start": "1",
       "range_end": "13",
-      "default": 1
+      "default": 12
     },
     "max_update": {
       "display_name": "Maximum Update",
@@ -58,43 +58,13 @@
         "9: 1.8",
         "10: 1.9",
         "11: 2.0",
-        "12: 2.2",
+        "12: 2.1",
         "13: 2.2"
       ],
       "type": "Range",
       "range_start": "1",
       "range_end": "13",
       "default": 13
-    },
-    "min_length": {
-      "display_name": "Minimum Length",
-      "description": [
-        "What is the shortest length you want to have?",
-        "1: Tiny (1-10 Seconds)",
-        "2: Short (10-30 Seconds)",
-        "3: Medium (30-60 Seconds)",
-        "4: Long (60-120 Seconds)",
-        "5: XL (120+ Seconds)"
-      ],
-      "type": "Range",
-      "range_start": "1",
-      "range_end": "5",
-      "default": 1
-    },
-    "max_length": {
-      "display_name": "Maximum Length",
-      "description": [
-        "What is the longest length you want to have?",
-        "1: Tiny (1-10 Seconds)",
-        "2: Short (10-30 Seconds)",
-        "3: Medium (30-60 Seconds)",
-        "4: Long (60-120 Seconds)",
-        "5: XL (120+ Seconds)"
-      ],
-      "type": "Range",
-      "range_start": "1",
-      "range_end": "5",
-      "default": 5
     },
     "min_difficulty": {
       "display_name": "Minimum Difficulty",
@@ -138,7 +108,7 @@
       "type": "Range",
       "range_start": "1",
       "range_end": "12",
-      "default": 12
+      "default": 7
     },
     "min_rating": {
       "display_name": "Minimum Rating",

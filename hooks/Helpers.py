@@ -33,17 +33,6 @@ def before_is_category_enabled(multiworld: MultiWorld, player: int, category_nam
     if category_name == "Update 2.2":
         return get_option_value(multiworld, player, "min_update") <= 13 and get_option_value(multiworld, player, "max_update") >= 13
 
-    if category_name == "Tiny":
-        return get_option_value(multiworld, player, "min_length") >= 1 and get_option_value(multiworld, player, "max_length") <= 1
-    if category_name == "Short":
-        return get_option_value(multiworld, player, "min_length") >= 2 and get_option_value(multiworld, player, "max_length") <= 2
-    if category_name == "Medium":
-        return get_option_value(multiworld, player, "min_length") >= 3 and get_option_value(multiworld, player, "max_length") <= 3
-    if category_name == "Long":
-        return get_option_value(multiworld, player, "min_length") >= 4 and get_option_value(multiworld, player, "max_length") <= 4
-    if category_name == "XL":
-        return get_option_value(multiworld, player, "min_length") >= 5 and get_option_value(multiworld, player, "max_length") <= 5
-
     if category_name == "N/A":
         return get_option_value(multiworld, player, "min_difficulty") >= 1 and get_option_value(multiworld, player, "max_difficulty") <= 1
     if category_name == "Auto":
