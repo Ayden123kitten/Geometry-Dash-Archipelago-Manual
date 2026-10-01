@@ -1,9 +1,11 @@
 {
   "core": {
     "goal": {
+      "description": "What is your goal?",
       "hidden": false
     },
     "death_link": {
+      "description": "Do you want to enable deathlink?",
       "default": false
     }
   },
