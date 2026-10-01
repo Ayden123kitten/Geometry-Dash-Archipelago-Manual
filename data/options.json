@@ -1,7 +1,7 @@
 {
   "core": {
     "goal": {
-      "hidden": true
+      "hidden": false
     },
     "death_link": {
       "default": false
@@ -139,6 +139,48 @@
       "range_start": "1",
       "range_end": "5",
       "default": 5
+    },
+    "level_count_mode": {
+      "display_name": "Level Count Mode",
+      "description": "Choose whether to include a specific number of levels or a percentage of levels.",
+      "type": "Choice",
+      "values": {
+        "Count": 1,
+        "Percentage": 2
+      },
+      "default": "Percentage"
+    },
+    "level_count": {
+      "display_name": "Levels Count",
+      "description": "The number of levels to include. If this exceeds the total available levels, it will be capped.",
+      "type": "Range",
+      "range_start": 1,
+      "range_end": 58664,
+      "default": 100
+    },
+    "level_percentage": {
+      "display_name": "Levels Percentage",
+      "description": "The percentage of levels to include.",
+      "type": "Range",
+      "range_start": 1,
+      "range_end": 100,
+      "default": 80
+    },
+    "goal_level_count": {
+      "display_name": "Goal Level Count",
+      "description": "The number of levels to complete to goal. If this exceeds the total available levels, it will be capped.",
+      "type": "Range",
+      "range_start": 1,
+      "range_end": 58664,
+      "default": 80
+    },
+    "goal_level_percentage": {
+      "display_name": "Goal Level Percentage",
+      "description": "The percentage of included levels to complete to goal.",
+      "type": "Range",
+      "range_start": 1,
+      "range_end": 100,
+      "default": 80
     }
   }
 }

@@ -645083,6 +645083,20 @@
                 "Levels"
             ],
             "requires": "Anamnesis (148388563) Unlock"
+        },
+        {
+            "name": "Goal: Complete Specific Number of Levels",
+            "victory": true,
+            "category": [
+                "Goal"
+            ]
+        },
+        {
+            "name": "Goal: Complete Percentage of Levels",
+            "victory": true,
+            "category": [
+                "Goal"
+            ]
         }
     ]
 }
