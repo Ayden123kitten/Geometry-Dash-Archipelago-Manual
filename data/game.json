@@ -6,10 +6,6 @@
     {
       "item_categories": ["Level Unlocks"],
       "random": 10
-    },
-    {
-      "items": ["Cube"],
-      "random": 1
     }
   ],
   "death_link": true
