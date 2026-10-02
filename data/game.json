@@ -3,10 +3,14 @@
   "creator": "Ayden",
   "filler_item_name": "Cube",
   "starting_items": [
-      {
-          "item_categories": ["Level Unlocks"],
-          "random": 10
-      }
+    {
+      "item_categories": ["Level Unlocks"],
+      "random": 10
+    },
+    {
+      "items": ["Cube"],
+      "random": 1
+    }
   ],
   "death_link": true
 }
