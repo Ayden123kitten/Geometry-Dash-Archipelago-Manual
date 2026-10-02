@@ -2,7 +2,7 @@ import re
 from typing import Optional, Any
 from BaseClasses import MultiWorld
 
-def get_excluded_level_ids(multiworld: MultiWorld, player: int) -> Set[str]:
+def get_excluded_level_ids(multiworld: MultiWorld, player: int) -> set[str]:
     option = getattr(multiworld.worlds[player].options, "exclude_level_ids", None)
     if option is None:
         return set()
@@ -15,7 +15,7 @@ def get_excluded_level_ids(multiworld: MultiWorld, player: int) -> Set[str]:
             excluded.add(part)
     return excluded
 
-def is_level_excluded(name: str, excluded_ids: Set[str]) -> bool:
+def is_level_excluded(name: str, excluded_ids: set[str]) -> bool:
     if not excluded_ids:
         return False
     match = re.search(r'\((\d+)\)', name)

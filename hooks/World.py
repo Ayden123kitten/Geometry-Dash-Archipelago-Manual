@@ -15,10 +15,6 @@ def hook_get_filler_item_name(world: World, multiworld: MultiWorld, player: int)
     return False
 
 def before_generate_early(world: World, multiworld: MultiWorld, player: int) -> None:
-    """
-    This is the earliest hook called during generation, before anything else is done.
-    Use it to check or modify incompatible options, or to set up variables for later use.
-    """
     pass
 
 def before_create_regions(world: World, multiworld: MultiWorld, player: int):
