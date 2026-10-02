@@ -1,14 +1,14 @@
 {
   "Classic Mode": {
-    "yaml_option": ["Classic_Mode"],
+    "yaml_option": ["classic_mode"],
     "hidden": true
   },
   "Platformer Mode": {
-    "yaml_option": ["Classic_Mode"],
+    "yaml_option": ["platformer_mode"],
     "hidden": true
   },
   "Progressive Hacks": {
-    "yaml_option": ["Classic_Mode"],
+    "yaml_option": ["progressive_hacks"],
     "hidden": true
   }
 }

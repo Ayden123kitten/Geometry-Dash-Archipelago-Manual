@@ -10,13 +10,13 @@
         }
     },
     "user": {
-        "Classic_Mode": {
+        "classic_mode": {
             "display_name": "Classic Mode",
             "description": "Do you want to enable classic levels?",
             "type": "toggle",
             "default": true
         },
-        "Platformer_Mode": {
+        "platformer_mode": {
             "display_name": "Platformer Mode",
             "description": "Do you want to enable platformer levels?",
             "type": "toggle",
@@ -41,8 +41,8 @@
                 "13: 2.2"
             ],
             "type": "Range",
-            "range_start": "1",
-            "range_end": "13",
+            "range_start": 1,
+            "range_end": 13,
             "default": 12
         },
         "max_update": {
@@ -64,8 +64,8 @@
                 "13: 2.2"
             ],
             "type": "Range",
-            "range_start": "1",
-            "range_end": "13",
+            "range_start": 1,
+            "range_end": 13,
             "default": 13
         },
         "min_difficulty": {
@@ -86,8 +86,8 @@
                 "12: Extreme Demon"
             ],
             "type": "Range",
-            "range_start": "1",
-            "range_end": "12",
+            "range_start": 1,
+            "range_end": 12,
             "default": 1
         },
         "max_difficulty": {
@@ -108,8 +108,8 @@
                 "12: Extreme Demon"
             ],
             "type": "Range",
-            "range_start": "1",
-            "range_end": "12",
+            "range_start": 1,
+            "range_end": 12,
             "default": 7
         },
         "min_rating": {
@@ -123,8 +123,8 @@
                 "5: Mythic"
             ],
             "type": "Range",
-            "range_start": "1",
-            "range_end": "5",
+            "range_start": 1,
+            "range_end": 5,
             "default": 1
         },
         "max_rating": {
@@ -138,8 +138,8 @@
                 "5: Mythic"
             ],
             "type": "Range",
-            "range_start": "1",
-            "range_end": "5",
+            "range_start": 1,
+            "range_end": 5,
             "default": 5
         },
         "level_count_mode": {
@@ -150,7 +150,7 @@
                 "Count": 1,
                 "Percentage": 2
             },
-            "default": "Percentage"
+            "default": "percentage"
         },
         "level_count": {
             "display_name": "Levels Count",
