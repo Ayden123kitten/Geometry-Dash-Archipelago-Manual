@@ -1,210 +1,210 @@
 {
-    "core": {
-        "goal": {
-            "description": "What is your goal?",
-            "hidden": false
-        },
-        "death_link": {
-            "description": "Do you want to enable deathlink?",
-            "default": false
-        }
+  "core": {
+    "goal": {
+      "description": "What is your goal?",
+      "hidden": false
     },
-    "user": {
-        "classic_mode": {
-            "display_name": "Classic Mode",
-            "description": "Do you want to enable classic levels?",
-            "type": "Toggle",
-            "default": true
-        },
-        "platformer_mode": {
-            "display_name": "Platformer Mode",
-            "description": "Do you want to enable platformer levels?",
-            "type": "Toggle",
-            "default": false
-        },
-        "min_update": {
-            "display_name": "Minimum Update",
-            "description": [
-                "What is the oldest update you want to use?",
-                "1: 1.0",
-                "2: 1.1",
-                "3: 1.2",
-                "4: 1.3",
-                "5: 1.4",
-                "6: 1.5",
-                "7: 1.6",
-                "8: 1.7",
-                "9: 1.8",
-                "10: 1.9",
-                "11: 2.0",
-                "12: 2.1",
-                "13: 2.2"
-            ],
-            "type": "Range",
-            "range_start": 1,
-            "range_end": 13,
-            "default": 12
-        },
-        "max_update": {
-            "display_name": "Maximum Update",
-            "description": [
-                "What is the newest update you want to use?",
-                "1: 1.0",
-                "2: 1.1",
-                "3: 1.2",
-                "4: 1.3",
-                "5: 1.4",
-                "6: 1.5",
-                "7: 1.6",
-                "8: 1.7",
-                "9: 1.8",
-                "10: 1.9",
-                "11: 2.0",
-                "12: 2.1",
-                "13: 2.2"
-            ],
-            "type": "Range",
-            "range_start": 1,
-            "range_end": 13,
-            "default": 13
-        },
-        "min_difficulty": {
-            "display_name": "Minimum Difficulty",
-            "description": [
-                "What is the lowest difficulty you want to have?",
-                "1: N/A",
-                "2: Auto",
-                "3: Easy",
-                "4: Normal",
-                "5: Hard",
-                "6: Harder",
-                "7: Insane",
-                "8: Easy Demon",
-                "9: Medium Demon",
-                "10: Hard Demon",
-                "11: Insane Demon",
-                "12: Extreme Demon"
-            ],
-            "type": "Range",
-            "range_start": 1,
-            "range_end": 12,
-            "default": 1
-        },
-        "max_difficulty": {
-            "display_name": "Maximum Difficulty",
-            "description": [
-                "What is the highest difficulty you want to have?",
-                "1: N/A",
-                "2: Auto",
-                "3: Easy",
-                "4: Normal",
-                "5: Hard",
-                "6: Harder",
-                "7: Insane",
-                "8: Easy Demon",
-                "9: Medium Demon",
-                "10: Hard Demon",
-                "11: Insane Demon",
-                "12: Extreme Demon"
-            ],
-            "type": "Range",
-            "range_start": 1,
-            "range_end": 12,
-            "default": 7
-        },
-        "min_rating": {
-            "display_name": "Minimum Rating",
-            "description": [
-                "What is the lowest rating you want to have?",
-                "1: Rated",
-                "2: Featured",
-                "3: Epic",
-                "4: Legendary",
-                "5: Mythic"
-            ],
-            "type": "Range",
-            "range_start": 1,
-            "range_end": 5,
-            "default": 1
-        },
-        "max_rating": {
-            "display_name": "Maximum Rating",
-            "description": [
-                "What is the highest rating you want to have?",
-                "1: Rated",
-                "2: Featured",
-                "3: Epic",
-                "4: Legendary",
-                "5: Mythic"
-            ],
-            "type": "Range",
-            "range_start": 1,
-            "range_end": 5,
-            "default": 5
-        },
-        "level_count_mode": {
-            "display_name": "Level Count Mode",
-            "description": "Choose whether to include a specific number of levels or a percentage of levels.",
-            "type": "Choice",
-            "values": {
-                "Count": 1,
-                "Percentage": 2
-            },
-            "default": 2
-        },
-        "level_count": {
-            "display_name": "Levels Count",
-            "description": "The number of levels to include. If this exceeds the total available levels, it will be capped.",
-            "type": "Range",
-            "range_start": 1,
-            "range_end": 58664,
-            "default": 100
-        },
-        "level_percentage": {
-            "display_name": "Levels Percentage",
-            "description": "The percentage of levels to include.",
-            "type": "Range",
-            "range_start": 1,
-            "range_end": 100,
-            "default": 80
-        },
-        "goal_level_count": {
-            "display_name": "Goal Level Count",
-            "description": "The number of levels to complete to goal. If this exceeds the total available levels, it will be capped.",
-            "type": "Range",
-            "range_start": 1,
-            "range_end": 58664,
-            "default": 80
-        },
-        "goal_level_percentage": {
-            "display_name": "Goal Level Percentage",
-            "description": "The percentage of included levels to complete to goal.",
-            "type": "Range",
-            "range_start": 1,
-            "range_end": 100,
-            "default": 80
-        },
-        "excluded_levels": {
-            "display_name": "Excluded Levels",
-            "description": "A list of level IDs to exclude from the game.",
-            "type": "Choice",
-            "values": {},
-            "allow_custom_value": true,
-            "default": "None"
-        },
-        "progressive_hacks": {
-            "display_name": "Progressive Hacks",
-            "description": [
-                "Enable progressive hack shards which are added as logic for Medium Demons to Extreme Demons. It takes 5 shards to make a full hack.",
-                "The progressive hacks are (in this order):",
-                "Speedhack (down to 0.5x speed) - Unlocks Medium Demons",
-                "Speedhack (down to 0.25x speed) - Unlocks Hard Demons",
-                "Speedhack (down to 0.1x speed) - Unlocks Insane Demons",
-                "Speedhack (down to 0.01x speed) - Unlocks Extreme Demons",
-                "Noclip - (only for list demons) - Unlocks List Demons"
-            ],
-            "type": "Toggle",
-            "default": false
-        }
+    "death_link": {
+      "description": "Do you want to enable deathlink?",
+      "default": false
     }
+  },
+  "user": {
+    "classic_mode": {
+      "display_name": "Classic Mode",
+      "description": "Do you want to enable classic levels?",
+      "type": "Toggle",
+      "default": true
+    },
+    "platformer_mode": {
+      "display_name": "Platformer Mode",
+      "description": "Do you want to enable platformer levels?",
+      "type": "Toggle",
+      "default": false
+    },
+    "min_update": {
+      "display_name": "Minimum Update",
+      "description": [
+        "What is the oldest update you want to use?",
+        "1: 1.0",
+        "2: 1.1",
+        "3: 1.2",
+        "4: 1.3",
+        "5: 1.4",
+        "6: 1.5",
+        "7: 1.6",
+        "8: 1.7",
+        "9: 1.8",
+        "10: 1.9",
+        "11: 2.0",
+        "12: 2.1",
+        "13: 2.2"
+      ],
+      "type": "Range",
+      "range_start": 1,
+      "range_end": 13,
+      "default": 12
+    },
+    "max_update": {
+      "display_name": "Maximum Update",
+      "description": [
+        "What is the newest update you want to use?",
+        "1: 1.0",
+        "2: 1.1",
+        "3: 1.2",
+        "4: 1.3",
+        "5: 1.4",
+        "6: 1.5",
+        "7: 1.6",
+        "8: 1.7",
+        "9: 1.8",
+        "10: 1.9",
+        "11: 2.0",
+        "12: 2.1",
+        "13: 2.2"
+      ],
+      "type": "Range",
+      "range_start": 1,
+      "range_end": 13,
+      "default": 13
+    },
+    "min_difficulty": {
+      "display_name": "Minimum Difficulty",
+      "description": [
+        "What is the lowest difficulty you want to have?",
+        "1: N/A",
+        "2: Auto",
+        "3: Easy",
+        "4: Normal",
+        "5: Hard",
+        "6: Harder",
+        "7: Insane",
+        "8: Easy Demon",
+        "9: Medium Demon",
+        "10: Hard Demon",
+        "11: Insane Demon",
+        "12: Extreme Demon"
+      ],
+      "type": "Range",
+      "range_start": 1,
+      "range_end": 12,
+      "default": 1
+    },
+    "max_difficulty": {
+      "display_name": "Maximum Difficulty",
+      "description": [
+        "What is the highest difficulty you want to have?",
+        "1: N/A",
+        "2: Auto",
+        "3: Easy",
+        "4: Normal",
+        "5: Hard",
+        "6: Harder",
+        "7: Insane",
+        "8: Easy Demon",
+        "9: Medium Demon",
+        "10: Hard Demon",
+        "11: Insane Demon",
+        "12: Extreme Demon"
+      ],
+      "type": "Range",
+      "range_start": 1,
+      "range_end": 12,
+      "default": 7
+    },
+    "min_rating": {
+      "display_name": "Minimum Rating",
+      "description": [
+        "What is the lowest rating you want to have?",
+        "1: Rated",
+        "2: Featured",
+        "3: Epic",
+        "4: Legendary",
+        "5: Mythic"
+      ],
+      "type": "Range",
+      "range_start": 1,
+      "range_end": 5,
+      "default": 1
+    },
+    "max_rating": {
+      "display_name": "Maximum Rating",
+      "description": [
+        "What is the highest rating you want to have?",
+        "1: Rated",
+        "2: Featured",
+        "3: Epic",
+        "4: Legendary",
+        "5: Mythic"
+      ],
+      "type": "Range",
+      "range_start": 1,
+      "range_end": 5,
+      "default": 5
+    },
+    "level_count_mode": {
+      "display_name": "Level Count Mode",
+      "description": "Choose whether to include a specific number of levels or a percentage of levels.",
+      "type": "Choice",
+      "values": {
+        "Count": 1,
+        "Percentage": 2
+      },
+      "default": 2
+    },
+    "level_count": {
+      "display_name": "Levels Count",
+      "description": "The number of levels to include. If this exceeds the total available levels, it will be capped.",
+      "type": "Range",
+      "range_start": 1,
+      "range_end": 58664,
+      "default": 100
+    },
+    "level_percentage": {
+      "display_name": "Levels Percentage",
+      "description": "The percentage of levels to include.",
+      "type": "Range",
+      "range_start": 1,
+      "range_end": 100,
+      "default": 80
+    },
+    "goal_level_count": {
+      "display_name": "Goal Level Count",
+      "description": "The number of levels to complete to goal. If this exceeds the total available levels, it will be capped.",
+      "type": "Range",
+      "range_start": 1,
+      "range_end": 58664,
+      "default": 80
+    },
+    "goal_level_percentage": {
+      "display_name": "Goal Level Percentage",
+      "description": "The percentage of included levels to complete to goal.",
+      "type": "Range",
+      "range_start": 1,
+      "range_end": 100,
+      "default": 80
+    },
+    "excluded_levels": {
+      "display_name": "Excluded Levels",
+      "description": "A list of level IDs to exclude from the game.",
+      "type": "Choice",
+      "values": {},
+      "allow_custom_value": true,
+      "default": 0
+    },
+    "progressive_hacks": {
+      "display_name": "Progressive Hacks",
+      "description": [
+        "Enable progressive hack shards which are added as logic for Medium Demons to Extreme Demons. It takes 5 shards to make a full hack.",
+        "The progressive hacks are (in this order):",
+        "Speedhack (down to 0.5x speed) - Unlocks Medium Demons",
+        "Speedhack (down to 0.25x speed) - Unlocks Hard Demons",
+        "Speedhack (down to 0.1x speed) - Unlocks Insane Demons",
+        "Speedhack (down to 0.01x speed) - Unlocks Extreme Demons",
+        "Noclip - (only for list demons) - Unlocks List Demons"
+      ],
+      "type": "Toggle",
+      "default": false
+    }
+  }
 }
