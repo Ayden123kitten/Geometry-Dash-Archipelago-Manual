@@ -29,6 +29,14 @@
             "filler": true
         },
         {
+            "name": "Progressive Hack Shard",
+            "count": 25,
+            "category": [
+                "Progressive Hacks"
+            ],
+            "progression": true
+        },
+        {
             "name": "chill out (146) Unlock",
             "category": [
                 "Harder",

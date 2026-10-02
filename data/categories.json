@@ -6,5 +6,9 @@
   "Platformer Mode": {
     "yaml_option": ["Classic_Mode"],
     "hidden": true
+  },
+  "Progressive Hacks": {
+    "yaml_option": ["Classic_Mode"],
+    "hidden": true
   }
 }

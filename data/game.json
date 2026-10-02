@@ -2,6 +2,11 @@
   "game": "GeometryDash",
   "creator": "Ayden",
   "filler_item_name": "Cube",
-  "starting_items": [],
+  "starting_items": [
+      {
+          "item_categories": ["Level Unlocks"],
+          "random": 10
+      }
+  ],
   "death_link": true
 }

@@ -190,6 +190,20 @@
       "type": "Choice",
       "allow_custom_value": true,
       "default": ""
+    },
+    "progressive_hacks": {
+      "display_name": "Progressive Hacks",
+      "description": [
+        "Enable progressive hack shards which are added as logic for Medium Demons to Extreme Demons. It takes 5 shards to make a full hack.",
+        "The progressive hacks are (in this order):",
+        "Speedhack (down to 0.5x speed) - Unlocks Medium Demons",
+        "Speedhack (down to 0.25x speed) - Unlocks Hard Demons",
+        "Speedhack (down to 0.1x speed) - Unlocks Insane Demons",
+        "Speedhack (down to 0.01x speed) - Unlocks Extreme Demons",
+        "Noclip - (only for list demons) - Unlocks List Demons"
+      ],
+      "type": "toggle",
+      "default": false
     }
   }
 }
