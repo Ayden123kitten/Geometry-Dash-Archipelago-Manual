@@ -645090,7 +645090,7 @@
       "category": [
         "Goal"
       ],
-      "requires": ]
+      "requires": ""
     },
     {
       "name": "Goal: Complete Percentage of Levels",
@@ -645098,7 +645098,7 @@
       "category": [
         "Goal"
       ],
-      "requires": ]
+      "requires": ""
     }
   ]
 }
