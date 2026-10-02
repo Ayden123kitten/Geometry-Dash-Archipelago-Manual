@@ -13,13 +13,13 @@
         "classic_mode": {
             "display_name": "Classic Mode",
             "description": "Do you want to enable classic levels?",
-            "type": "toggle",
+            "type": "Toggle",
             "default": true
         },
         "platformer_mode": {
             "display_name": "Platformer Mode",
             "description": "Do you want to enable platformer levels?",
-            "type": "toggle",
+            "type": "Toggle",
             "default": false
         },
         "min_update": {
@@ -203,7 +203,7 @@
                 "Speedhack (down to 0.01x speed) - Unlocks Extreme Demons",
                 "Noclip - (only for list demons) - Unlocks List Demons"
             ],
-            "type": "toggle",
+            "type": "Toggle",
             "default": false
         }
     }
