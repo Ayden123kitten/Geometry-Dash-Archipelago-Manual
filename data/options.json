@@ -183,6 +183,13 @@
       "range_start": 1,
       "range_end": 100,
       "default": 80
+    },
+    "excluded_levels": {
+      "display_name": "Excluded Levels",
+      "description": "A list of level IDs to exclude from the game.",
+      "type": "Choice",
+      "allow_custom_value": true,
+      "default": ""
     }
   }
 }

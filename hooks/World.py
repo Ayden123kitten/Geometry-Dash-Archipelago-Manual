@@ -22,19 +22,27 @@ def before_generate_early(world: World, multiworld: MultiWorld, player: int) -> 
     pass
 
 def before_create_regions(world: World, multiworld: MultiWorld, player: int):
-    from ..Helpers import get_option_value
+    from ..Helpers import get_option_value, get_excluded_level_ids, is_level_excluded
     import logging
+
+    excluded_ids = get_excluded_level_ids(multiworld, player)
 
     if isinstance(world.location_table, dict):
         victory_locations = {k: v for k, v in world.location_table.items() if v.get("victory", False)}
-        regular_levels = {k: v for k, v in world.location_table.items() if not v.get("victory", False)}
+        regular_levels = {
+            k: v for k, v in world.location_table.items()
+            if not v.get("victory", False) and not is_level_excluded(v.get("name", ""), excluded_ids)
+        }
     else:
         victory_locations = [loc for loc in world.location_table if loc.get("victory", False)]
-        regular_levels = [loc for loc in world.location_table if not loc.get("victory", False)]
+        regular_levels = [
+            loc for loc in world.location_table
+            if not loc.get("victory", False) and not is_level_excluded(loc.get("name", ""), excluded_ids)
+        ]
 
     total_available = len(regular_levels)
     if total_available == 0:
-        logging.warning("No regular levels available to filter. Check your other options.")
+        logging.warning("No regular levels available to filter. Check your exclude options and other filters.")
         return
 
     mode = get_option_value(world, player, "level_inclusion_mode")
@@ -112,6 +120,11 @@ def after_create_regions(world: World, multiworld: MultiWorld, player: int):
                     region.locations.remove(location)
 
 def before_create_items_all(item_config: dict[str, int|dict], world: World, multiworld: MultiWorld, player: int) -> dict[str, int|dict]:
+    from ..Helpers import get_excluded_level_ids, is_level_excluded
+
+    excluded_ids = get_excluded_level_ids(multiworld, player)
+
+    world.item_table = [item for item in world.item_table if not is_level_excluded(item.get("name", ""), excluded_ids)]
 
     option_keys = ["RemoveCreators", "RemoveSongs", "RemoveSongArtists"]
 
