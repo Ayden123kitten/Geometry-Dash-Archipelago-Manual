@@ -190,7 +190,7 @@
             "type": "Choice",
             "values": {},
             "allow_custom_value": true,
-            "default": ""
+            "default": "None"
         },
         "progressive_hacks": {
             "display_name": "Progressive Hacks",
