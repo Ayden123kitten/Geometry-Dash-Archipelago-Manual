@@ -18,34 +18,27 @@ def before_generate_early(world: World, multiworld: MultiWorld, player: int) -> 
     pass
 
 def before_create_regions(world: World, multiworld: MultiWorld, player: int):
-    from ..Helpers import get_option_value, get_excluded_level_ids, is_level_excluded
+    from ..Helpers import get_option_value
     import logging
-
-    excluded_ids = get_excluded_level_ids(multiworld, player)
 
     if isinstance(world.location_table, dict):
         victory_locations = {k: v for k, v in world.location_table.items() if v.get("victory", False)}
-        regular_levels = {
-            k: v for k, v in world.location_table.items()
-            if not v.get("victory", False) and not is_level_excluded(v.get("name", ""), excluded_ids)
-        }
+        regular_levels = {k: v for k, v in world.location_table.items() if not v.get("victory", False)}
     else:
         victory_locations = [loc for loc in world.location_table if loc.get("victory", False)]
-        regular_levels = [
-            loc for loc in world.location_table
-            if not loc.get("victory", False) and not is_level_excluded(loc.get("name", ""), excluded_ids)
-        ]
+        regular_levels = [loc for loc in world.location_table if not loc.get("victory", False)]
 
     total_available = len(regular_levels)
     if total_available == 0:
-        logging.warning("No regular levels available to filter. Check your exclude options and other filters.")
+        logging.warning("No regular levels available to filter. Check your other options.")
         return
 
-    mode = get_option_value(world, player, "level_inclusion_mode")
-    if mode == 0:
-        target_count = get_option_value(world, player, "levels_to_include_count")
+    mode = get_option_value(multiworld, player, "level_count_mode")
+
+    if mode == 1:
+        target_count = get_option_value(multiworld, player, "level_count")
     else:
-        percentage = get_option_value(world, player, "levels_to_include_percentage")
+        percentage = get_option_value(multiworld, player, "level_percentage")
         target_count = max(1, int(round(total_available * (percentage / 100.0))))
 
     target_count = min(target_count, total_available)
@@ -77,10 +70,10 @@ def before_create_regions(world: World, multiworld: MultiWorld, player: int):
 
     included_count = len(selected_levels)
 
-    goal_count_val = get_option_value(world, player, "goal_level_count")
+    goal_count_val = get_option_value(multiworld, player, "goal_level_count")
     actual_goal_count = min(goal_count_val, included_count)
 
-    goal_pct_val = get_option_value(world, player, "goal_level_percentage")
+    goal_pct_val = get_option_value(multiworld, player, "goal_level_percentage")
     actual_goal_pct_count = max(1, int(round(included_count * (goal_pct_val / 100.0))))
 
     def update_goal_requires(loc, required_count):
@@ -103,7 +96,6 @@ def before_create_regions(world: World, multiworld: MultiWorld, player: int):
                 update_goal_requires(loc, actual_goal_count)
             elif loc.get("name") == "Goal: Complete Percentage of Levels":
                 update_goal_requires(loc, actual_goal_pct_count)
-    pass
 
 def after_create_regions(world: World, multiworld: MultiWorld, player: int):
     locationNamesToRemove: list[str] = []
@@ -116,22 +108,20 @@ def after_create_regions(world: World, multiworld: MultiWorld, player: int):
                     region.locations.remove(location)
 
 def before_create_items_all(item_config: dict[str, int|dict], world: World, multiworld: MultiWorld, player: int) -> dict[str, int|dict]:
-    from ..Helpers import get_excluded_level_ids, is_level_excluded
-
-    excluded_ids = get_excluded_level_ids(multiworld, player)
-
-    world.item_table = [item for item in world.item_table if not is_level_excluded(item.get("name", ""), excluded_ids)]
-
     option_keys = ["RemoveCreators", "RemoveSongs", "RemoveSongArtists"]
 
     categories_to_remove = set()
     for key in option_keys:
         option_obj = getattr(world.options, key, None)
         if option_obj and option_obj.value:
-            categories_to_remove.update(option_obj.value)
+            val = option_obj.value
+            if isinstance(val, str):
+                categories_to_remove.add(val)
+            else:
+                categories_to_remove.update(val)
 
     if not categories_to_remove:
-        return
+        return item_config
 
     def has_removed_category(entry):
         categories = entry.get("category", [])
@@ -140,14 +130,11 @@ def before_create_items_all(item_config: dict[str, int|dict], world: World, mult
         return any(cat in categories_to_remove for cat in categories)
 
     world.item_table = [item for item in world.item_table if not has_removed_category(item)]
+
     world.location_table = [loc for loc in world.location_table if not has_removed_category(loc)]
+    active_location_names = set(loc.get("name") for loc in world.location_table)
 
-    active_location_names = set(world.location_table.keys())
 
-    world.item_pool = [
-        item for item in world.item_pool
-        if getattr(item, "associated_location", None) in active_location_names
-    ]
     return item_config
 
 def before_create_items_starting(item_pool: list, world: World, multiworld: MultiWorld, player: int) -> list:
@@ -190,15 +177,12 @@ def before_generate_basic(world: World, multiworld: MultiWorld, player: int):
         return
 
     target_count = count_option.value
-    all_locations = list(world.location_table.keys())
+
+    all_locations = [loc.get("name") for loc in world.location_table]
 
     if len(all_locations) > target_count:
         selected_locations = set(world.random.sample(all_locations, target_count))
-
-        for loc in all_locations:
-            if loc not in selected_locations:
-                world.location_table.pop(loc, None)
-    pass
+        world.location_table = [loc for loc in world.location_table if loc.get("name") in selected_locations]
 
 def after_generate_basic(world: World, multiworld: MultiWorld, player: int):
     pass
