@@ -4,8 +4,9 @@
   "filler_item_name": "Cube",
   "starting_items": [
     {
+      "yaml_option": ["progressive_hacks"],
       "item_categories": ["Level Unlocks"],
-      "random": 10
+      "random": 25
     }
   ],
   "death_link": true
