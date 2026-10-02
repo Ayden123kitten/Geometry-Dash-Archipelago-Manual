@@ -150,7 +150,7 @@
                 "Count": 1,
                 "Percentage": 2
             },
-            "default": "percentage"
+            "default": 2
         },
         "level_count": {
             "display_name": "Levels Count",
